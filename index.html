@@ -1,8 +1,68 @@
 <html>
   <head>
     <title>La isla volcanica</title>
-  </head>
-  <body>
+    <style>
+      nav button {
+  margin: 5px;
+  color: #000;
+  border-radius: 50px;
+  border: solid 1px #333;
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+nav button:hover {
+  color: #007BFF;
+}
+nav button:active {
+  color: #0056b3;
+}
+nav {
+  margin-bottom: 20px;
+  background-color: #000;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+
+}
+</style>
+</head>
+<body>
+  <nav>
+    <button onclick="cambiarPagina('home')">Home</button>
+    <button onclick="cambiarPagina('d-informacion')">Informacion para diego</button>
+    <button onclick="cambiarPagina('reglas')">Reglas</button>
+    <button onclick="cambiarPagina('video')">Video instructivo</button>
+  </nav>
+  
+  <section id="home" class="pagina activa">
     <h1>La isla volcánica</h1>
-  </body>
+    <p>Si eres diego pulsa <a href="javascript:cambiarPagina('d-informacion;')"></a></p>
+  </section>
+
+  <section id="d-infomacion" class="pagina">
+    <h2>El nombre 'La isla volcanica' esta ocupado.</h2>
+    <p>Si quieres puedes comprobarlo pulsando <a href="https://www.amazon.es/Devir-Adventure-Games-Volc%C3%A1nica-Juego/dp/B0BN28FVSN">aqui</a>.</p>
+  </section>
+
+  <section id="reglas" class="pagina">
+    <h1>Reglas</h1>
+    <p>&lgt;!--Aqui van las reglas--&rgt;</p>
+  </section>
+
+  <section id="video" class="pagina">
+    <h1>Video instructivo</h1>
+    <p>&lgt;!--Aqui van las reglas--&rgt;</p>
+  </section>
+
+  <script>
+    function cambiarPagina(idPagina){
+      const paginas = document.querySelectorAll('.pagina');
+      paginas.forEach(pagina => {
+        pagina.classList.remove('activa');
+      });
+      document.getElementById(idPagina).classList.add('activa');
+    }
+  </script>
+
+</body>
 </html>
