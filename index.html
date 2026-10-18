@@ -68,7 +68,7 @@ nav {
 
   <section id="video" class="pagina">
     <h1>Video instructivo</h1>
-    <video src="la_isla_volcanica_animada_menos_de_25MB.mp4" controls autoplay></video>
+    <video id="video-instructivo" src="la_isla_volcanica_animada_menos_de_25MB.mp4" controls autoplay></video>
   </section>
 
   <script>
@@ -79,6 +79,19 @@ nav {
       });
       document.getElementById(idPagina).classList.add('activa');
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('video-instructivo');
+      if (!video) return;
+
+      video.volume = 1.0;
+      video.muted = false;
+
+      video.addEventListener('play', function() {
+        video.volume = 1.0;
+        video.muted = false;
+      });
+    });
   </script>
 
 </body>
