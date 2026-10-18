@@ -84,11 +84,11 @@ nav {
       const video = document.getElementById('video-instructivo');
       if (!video) return;
 
-      video.volume = 1.0;
+      video.volume = 10.0;
       video.muted = false;
 
       video.addEventListener('play', function() {
-        video.volume = 1.0;
+        video.volume = 10.0;
         video.muted = false;
       });
     });
